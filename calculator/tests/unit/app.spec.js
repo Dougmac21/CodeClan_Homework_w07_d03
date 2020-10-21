@@ -41,8 +41,15 @@ describe('App', () => {
         expect(wrapper.vm.runningTotal).to.equal(123);
     });
 
-    xit('should chain multiple operations together', () => {
-
+    it('should chain multiple operations together', () => {
+        wrapper.vm.runningTotal = 0;            // actual: 
+        wrapper.vm.operatorClick("+");          // actual: 0
+        wrapper.vm.numberClick(10);             // actual: 10
+        wrapper.vm.operatorClick("+");          // actual: 10
+        wrapper.vm.operatorClick("+");          // actual: 20
+        wrapper.vm.operatorClick("+");          // actual: 40
+        wrapper.vm.operatorClick("+");          // actual: 80
+        expect(wrapper.vm.runningTotal).to.equal(80);
     });
 
     xit('should clear the running total without any impact on the calculation', () => {
