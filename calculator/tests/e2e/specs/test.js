@@ -40,12 +40,16 @@ describe('calculator', () => {
     cy.get('#operator_add').click();
     cy.get('#operator_add').click();
     cy.get('.display').should('contain', '800');
-
-
   });
 
-  xit('should output positive numbers as normal', () => {
-
+  it('should output positive numbers as normal', () => {
+    cy.get('#number3').click();
+    cy.get('#number3').click();
+    cy.get('#operator_subtract').click();
+    cy.get('#number1').click();
+    cy.get('#number0').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '23');
   });
 
   xit('should output negative numbers with an indictor that they are negative', () => {
