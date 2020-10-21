@@ -75,8 +75,12 @@ describe('calculator', () => {
 
   });
 
-  xit('should give a safely returned error for divide non-zero by zero', () => {
-
+  it('should give a safely returned error for divide non-zero by zero', () => {
+    cy.get('#number5').click();
+    cy.get('#operator_divide').click();
+    cy.get('#number0').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', 'Infinity');
   });
 
   xit('should return zero for zero divided by a non-zero number', () => {
