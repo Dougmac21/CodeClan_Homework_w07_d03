@@ -11,7 +11,11 @@ describe('calculator', () => {
   });
 
   it('should have number button presses update the running total', () => {
-
+    cy.get('#number1').click();
+    cy.get('#number2').click();
+    cy.get('#number3').click();
+    cy.get('#number4').click();
+    cy.get('.display').should('contain', '1234');
   });
 
   xit('should update the display with the result of an operation', () => {
