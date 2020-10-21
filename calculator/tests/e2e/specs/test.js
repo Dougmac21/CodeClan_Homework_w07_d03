@@ -62,8 +62,13 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '-50');
   });
 
-  xit('should output non-whole numbers as a decimal', () => {
-
+  it('should output non-whole numbers as a decimal up to the display size limit', () => {
+    cy.get('#number2').click();
+    cy.get('#number2').click();
+    cy.get('#operator_divide').click();
+    cy.get('#number7').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '3.142857142857143');
   });
 
   xit('should output numbers beyond the display space of the output view as an exponent', () => {
