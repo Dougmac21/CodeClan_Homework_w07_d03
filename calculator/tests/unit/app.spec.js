@@ -61,7 +61,7 @@ describe('App', () => {
         wrapper.vm.numberClick(5);              // actual: 20
         wrapper.vm.clearClick();                // actual: still 20...
         wrapper.vm.numberClick(10);             // actual: still 20...
-        wrapper.vm.operatorClick("=");          // actual: 30!
+        wrapper.vm.operatorClick("=");          // actual: 30
         expect(wrapper.vm.runningTotal).to.equal(30);
     });
     
