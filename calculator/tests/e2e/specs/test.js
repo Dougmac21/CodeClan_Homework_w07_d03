@@ -52,8 +52,14 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '23');
   });
 
-  xit('should output negative numbers with an indictor that they are negative', () => {
-
+  it('should output negative numbers with an indictor that they are negative', () => {
+    cy.get('#number2').click();
+    cy.get('#number5').click();
+    cy.get('#operator_subtract').click();
+    cy.get('#number7').click();
+    cy.get('#number5').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '-50');
   });
 
   xit('should output non-whole numbers as a decimal', () => {
