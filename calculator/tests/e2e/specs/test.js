@@ -28,7 +28,19 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '20');
   });
 
-  xit('should chain multiple operations correctly', () => {
+  it('should chain multiple operations correctly', () => {
+    cy.get('#number1').click();
+    cy.get('#number0').click();
+    cy.get('#number0').click();
+    cy.get('#operator_add').click();
+    cy.get('#number1').click();
+    cy.get('#number0').click();
+    cy.get('#number0').click();
+    cy.get('#operator_add').click();
+    cy.get('#operator_add').click();
+    cy.get('#operator_add').click();
+    cy.get('.display').should('contain', '800');
+
 
   });
 
