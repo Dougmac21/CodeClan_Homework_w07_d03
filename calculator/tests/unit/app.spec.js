@@ -15,8 +15,10 @@ describe('App', () => {
         expect(wrapper.vm.runningTotal).to.equal(5);
     });
 
-    xit('should be able to subtract a number from a number', () => {
-
+    it('should be able to subtract a number from a number', () => {
+        wrapper.vm.previousTotal = 7;
+        wrapper.vm.subtract(4);
+        expect(wrapper.vm.runningTotal).to.equal(3);
     });
 
     xit('should be able to multiply one number by another', () => {
