@@ -27,8 +27,10 @@ describe('App', () => {
         expect(wrapper.vm.runningTotal).to.equal(15);
     });
 
-    xit('should be able to divide one number by another', () => {
-
+    it('should be able to divide one number by another', () => {
+        wrapper.vm.previousTotal = 21;
+        wrapper.vm.divide(7);
+        expect(wrapper.vm.runningTotal).to.equal(3);
     });
 
     xit('should concatinate multiple clicks of a number button', () => {
