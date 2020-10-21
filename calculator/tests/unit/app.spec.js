@@ -21,8 +21,10 @@ describe('App', () => {
         expect(wrapper.vm.runningTotal).to.equal(3);
     });
 
-    xit('should be able to multiply one number by another', () => {
-
+    it('should be able to multiply one number by another', () => {
+        wrapper.vm.previousTotal = 3
+        wrapper.vm.multiply(5);
+        expect(wrapper.vm.runningTotal).to.equal(15);
     });
 
     xit('should be able to divide one number by another', () => {
