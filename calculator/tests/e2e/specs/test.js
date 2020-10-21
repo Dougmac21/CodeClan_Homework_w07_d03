@@ -18,8 +18,14 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '1234');
   });
 
-  xit('should update the display with the result of an operation', () => {
-
+  it('should update the display with the result of an operation', () => {
+    cy.get('#number1').click();
+    cy.get('#number0').click();
+    cy.get('#operator_add').click();
+    cy.get('#number1').click();
+    cy.get('#number0').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '20');
   });
 
   xit('should chain multiple operations correctly', () => {
