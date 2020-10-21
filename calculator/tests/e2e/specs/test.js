@@ -80,7 +80,7 @@ describe('calculator', () => {
     cy.get('#operator_divide').click();
     cy.get('#number0').click();
     cy.get('#operator_equals').click();
-    cy.get('.display').should('contain', 'Infinity');
+    cy.get('.display').should('contain', 'Error');
   });
 
   it('should return zero for zero divided by a non-zero number', () => {
