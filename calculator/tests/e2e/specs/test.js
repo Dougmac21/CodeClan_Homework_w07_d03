@@ -83,8 +83,12 @@ describe('calculator', () => {
     cy.get('.display').should('contain', 'Infinity');
   });
 
-  xit('should return zero for zero divided by a non-zero number', () => {
-
+  it('should return zero for zero divided by a non-zero number', () => {
+    cy.get('#number0').click();
+    cy.get('#operator_divide').click();
+    cy.get('#number8').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '0');
   });
 
 
