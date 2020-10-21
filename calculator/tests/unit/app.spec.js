@@ -33,8 +33,12 @@ describe('App', () => {
         expect(wrapper.vm.runningTotal).to.equal(3);
     });
 
-    xit('should concatinate multiple clicks of a number button', () => {
-
+    it('should concatinate multiple clicks of a number button', () => {
+        wrapper.vm.runningTotal = 0;
+        wrapper.vm.numberClick(1);
+        wrapper.vm.numberClick(2);
+        wrapper.vm.numberClick(3);
+        expect(wrapper.vm.runningTotal).to.equal(123);
     });
 
     xit('should chain multiple operations together', () => {
