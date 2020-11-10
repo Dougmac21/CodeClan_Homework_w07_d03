@@ -31,7 +31,7 @@ export default {
     eventBus.$on('number-clicked', number => this.numberClick(number))
     eventBus.$on('clear-clicked', () => this.clearClick())
     eventBus.$on('operator-clicked', operator => this.operatorClick(operator))
-// comment to test git
+
   },
   methods: {
     numberClick: function (number) {
@@ -92,7 +92,12 @@ export default {
       this.runningTotal = parseFloat(this.previousTotal) * parseFloat(number);
     },
     divide(number) {
-      this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+      if (number !== 0) {
+        this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+      }
+      else {
+        this.runningTotal = "Divide By Zero Error"
+      }
     },
   },
 };

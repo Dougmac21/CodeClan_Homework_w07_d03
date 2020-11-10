@@ -71,7 +71,7 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '3.142857142857143');
   });
 
-  it('should output numbers beyond the display space of the output view as an exponent', () => {
+  xit('should output numbers beyond the display space of the output view as an exponent', () => {
     cy.get('#number1').click();
     cy.get('#number0').click();
     cy.get('#number0').click();
@@ -109,12 +109,12 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '1e+30');  // result of 1_fifteen-zeros**
   });
 
-  xit('should give a safely returned error for divide non-zero by zero', () => {
+  it('should give a safely returned error for divide non-zero by zero', () => {
     cy.get('#number5').click();
     cy.get('#operator_divide').click();
     cy.get('#number0').click();
     cy.get('#operator_equals').click();
-    cy.get('.display').should('contain', 'Error');
+    cy.get('.display').should('contain', 'Divide By Zero Error');
   });
 
   xit('should return zero for zero divided by a non-zero number', () => {
