@@ -31,7 +31,7 @@ export default {
     eventBus.$on('number-clicked', number => this.numberClick(number))
     eventBus.$on('clear-clicked', () => this.clearClick())
     eventBus.$on('operator-clicked', operator => this.operatorClick(operator))
-
+// comment to test git
   },
   methods: {
     numberClick: function (number) {
